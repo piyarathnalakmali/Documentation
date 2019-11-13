@@ -634,34 +634,49 @@ Enabling the required APIs
  5. Click **ENABLE**.
  
 Configurations in DefectDojo
- - Click 'Configuration' from the left hand menu.
- - Click 'Google Sheets Sync'.
- - Fill the form.
+ * Click 'Configuration' from the left hand menu.
+ * Click 'Google Sheets Sync'.
+ * Fill the form.
  
-     .. image:: _static/google_sheets_sync_conf.png
-        :alt: Google Sheets Sync Configuration Page
+   .. image:: _static/google_sheets_sync_conf.png
+      :alt: Google Sheets Sync Configuration Page
 
-   - Upload the downloaded json file into the **Upload Credentials file** field.
-   - Drive Folder Id
+   * Upload the downloaded json file into the **Upload Credentials file** field.
+   * Drive Folder Id
   
-     - Create a folder inside the Google drive of the same gmail account used to create the service account. 
-     - Get the **client_email** from the downloaded json file and share the created drive folder with client_email giving **edit access**.
-     - Extract the folder id from the URL and insert it as the **Drive Folder Id**.
+     * Create a folder inside the Google drive of the same gmail account used to create the service account. 
+     * Get the **client_email** from the downloaded json file and share the created drive folder with client_email giving **edit access**.
+     * Extract the folder id from the URL and insert it as the **Drive Folder Id**.
      
-         .. image:: _static/drive_folder_id.png
-            :alt: Extracting Drive Folder ID
+       .. image:: _static/drive_folder_id.png
+          :alt: Extracting Drive Folder ID
     
-   - Tick the **Enable Service** check box. (**Optional** as this has no impact on the configuration, but you must set it to true inorder to use the feature. Service can be enabled or disabled at any point after the configuration using this check box)
-   - For each field in the finding table there are two related entries in the form.
-     - In the drop down, select Hide if the column needs to be hidden in the google sheet, else select any other option based on the length of the entry that goes under the column.
-     - If the column needs to be protected in the google sheet, tick the check box. Otherwise leave it unchecked. 
- - Click 'Submit'.
+   * Tick the **Enable Service** check box. (**Optional** as this has no impact on the configuration, but you must set it to true inorder to use the feature. Service can be enabled or disabled at any point after the configuration using this check box)
+   * For each field in the finding table there are two related entries in the form.
+   
+     * In the drop down, select Hide if the column needs to be hidden in the google sheet, else select any other option based on the length of the entry that goes under the column.
+     * If the column needs to be protected in the google sheet, tick the check box. Otherwise leave it unchecked. 
+ * Click 'Submit'.
  
 Admin has the privilege to revoke the access given to DefectDojo to access Google Sheets and Google Drive data by simply clicking the **Revoke Access** button.
 
 Using Google Sheets Sync Feature
 ````````````````````````````````
 Before a user can export a test to a Google Spreadsheet, admin must Configure Google Sheets Sync and **Enable** sync feature.
+
+Depending on whether a Google Spreadsheet exists for the test or not, the User interface displayed will be different.
+
+If a Google Spreadsheet does not exist for the Test:
+
+.. image:: _static/create_google_sheet_UI.png
+  :alt: Create Google Sheet Button 
+  
+If a Google Spreadsheet is already created for the Test:
+
+.. image:: _static/sync_google_sheet_UI.png
+  :alt: Sync Google Sheet Button
+  
+After creating a Google Spreadsheet, users can review and edit Finding details using the Google Sheet. If any change is done in the Google Sheet users can click the **Sync Google Sheet** button to get those changes into DefectDojo.
 
 Issue Consolidation
 -------------------
@@ -717,4 +732,4 @@ When importing a report using the APIv2 api/v2/import-scan/:
 * Parameters of interest are
     * skip_duplicates : if true, duplicates are not inserted at all
     * close_old_findings : if true, findings  that are not duplicates and that were in the previous scan of the same type (example ZAP) for the same product (or engagement in case of  "Deduplication on engagement") and that are not present in the new scan are closed (Inactive, Verified, Mitigated)
-    * if skip_duplicates and close_old_findings are both false, not deduplication is done.
+    * if skip_duplicates and close_old_findings are both false, not deduplication is done
