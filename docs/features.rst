@@ -693,7 +693,10 @@ Configurations in DefectDojo
  1. Click 'Configuration' from the left hand menu.
  2. Click 'Google Sheets Sync'.
  3. Fill the form.
- 
+
+ 1. Go to the `Google API Console <https://console.developers.google.com//>`_.
+ 2. From the projects list, select the project created for DefectDojo.
+ 3. If the APIs & services page 
     .. image:: _static/google_sheets_sync_conf.png
        :alt: Google Sheets Sync Configuration Page
 
