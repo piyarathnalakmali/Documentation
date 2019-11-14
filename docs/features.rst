@@ -694,16 +694,13 @@ Configurations in DefectDojo
  2. Click 'Google Sheets Sync'.
  3. Fill the form.
 
- 1. Go to the `Google API Console <https://console.developers.google.com//>`_.
- 2. From the projects list, select the project created for DefectDojo.
- 3. If the APIs & services page 
     .. image:: _static/google_sheets_sync_conf.png
        :alt: Google Sheets Sync Configuration Page
 
     a. Upload the downloaded json file into the **Upload Credentials file** field.
     b. Drive Folder Id
   
-       a. Create a folder inside the Google drive of the same gmail account used to create the service account. 
+       a. Create a folder inside the Google drive of the same gmail account used to create the service account.
        b. Get the **client_email** from the downloaded json file and share the created drive folder with client_email giving **edit access**.
        c. Extract the folder id from the URL and insert it as the **Drive Folder Id**.
      
@@ -713,8 +710,8 @@ Configurations in DefectDojo
     c. Tick the **Enable Service** check box. (**Optional** as this has no impact on the configuration, but you must set it to true inorder to use the feature. Service can be enabled or disabled at any point after the configuration using this check box)
     d. For each field in the finding table there are two related entries in the form.
    
-       a. In the drop down, select Hide if the column needs to be hidden in the google sheet, else select any other option based on the length of the entry that goes under the column.
-       b. If the column needs to be protected in the google sheet, tick the check box. Otherwise leave it unchecked. 
+       a. In the drop down, select Hide if the column needs to be hidden in the Google Sheet, else select any other option based on the length of the entry that goes under the column.
+       b. If the column needs to be protected in the Google Sheet, tick the check box. Otherwise leave it unchecked. 
  4. Click 'Submit'.
  
 Admin has the privilege to revoke the access given to DefectDojo to access Google Sheets and Google Drive data by simply clicking the **Revoke Access** button.
